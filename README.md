@@ -26,3 +26,18 @@ Leading questions:
   * How can I segregate logic (functions/methods) from the render() method in another file so that I can implement some kind of observer pattern? 
   * Why use a `const` instead of a `class` in another .js file?
   * How can I properly document my files so that others know how to use my code?
+
+**Another To-Do list application, in more depth (which can be found [here](https://github.com/obDann/web-a-week/blob/master/todo-list))**
+
+Lessons learned:
+  * `index.js` is the "driver" file, all "main" code is in `App.js`
+  * Components are classes, however, when going through this example, data from the state is passed like a hierarchy (i.e. `App's state -> Todos -> TodoItem`) when specifying an attribute of a component.
+    * To access the "parent's" passed state data, you have to specify `this.props.{attribute_here}`
+  
+Answering previous leading questions:
+  * How can I segregate logic (functions/methods) from the render() method in another file so that I can implement some kind of observer pattern?
+    * Basic Javascript (I have not explored this option), you can do an import statement for the backend script, and call the backend script to use the functions needed (you may also need to specify `this` as a parameter since a lot of functions utlize `this`)
+  * Why use a `const` instead of a `class` in another .js file?
+    * Using a `const` instead of a `class` is usually just a temporary fix for things like styling. In a SWE sense, you may need to use classes in order to adapt to changes and to make components extendible
+  * How can I properly document my files so that others know how to use my code?
+    * PropTypes is similar to class checking, however, this is only for data that is being passed from one component to another. There may be a conventional style guide for passing component data along the likes of interfaces
